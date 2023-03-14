@@ -1,0 +1,14 @@
+{
+  "name": "cruise-ships",
+  "version": "1.0.0",
+  "description": "Cruise Ships",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Benj Speight",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
