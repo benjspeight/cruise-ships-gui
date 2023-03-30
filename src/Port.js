@@ -4,7 +4,6 @@ class Port {
       this.ships = [];
     }
 
-
   addShip(Ship) {
     this.ships.push(Ship);
   }
