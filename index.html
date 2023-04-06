@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="portform">
+      <label id="header" for="addport">Add Port:</label><br /><br />
+      <input type="text" id="addport" placeholder="Port Name" size="10" /><br />
+      <input id="submit" type="submit" value="Submit" />
+    </form>
+    <div id="hud"></div>
+    <div id="viewport">
+      <div id="ports"></div>
+      <div id="ship"></div>
+      <button id="sailbutton">Set Sail!</button>
+    </div>
+    <script src="./src/controller.js"></script>
+    <script src="./src/Port.js"></script>
+    <script src="./src/Itinerary.js"></script>
+    <script src="./src/Ship.js"></script>
+    <script>
+      const itinerary = new Itinerary([
+        new Port("Holyhead"),
+        new Port("Dublin"),
+        new Port("Portmsouth"),
+        new Port("Calais"),
+      ]);
+      const ship = new Ship(itinerary);
+      const controller = new Controller(ship);
+      controller.renderPorts(itinerary.ports);
+      controller.renderShip();
+    </script>
+  </body>
+</html>
