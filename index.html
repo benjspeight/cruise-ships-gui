@@ -12,32 +12,26 @@
     <title>Document</title>
   </head>
   <body>
-    <form id="portform">
-      <label id="header" for="addport">Add Port:</label><br /><br />
-      <input type="text" id="addport" placeholder="Port Name" size="10" /><br />
-      <input id="submit" type="submit" value="Submit" />
-    </form>
-    <div id="hud"></div>
+    <div id="display"></div>
     <div id="viewport">
       <div id="ports"></div>
       <div id="ship"></div>
-      <button id="sailbutton">Set Sail!</button>
+      <button id="sailButton" hidden>SET SAIL!</button>
     </div>
-    <script src="./src/controller.js"></script>
-    <script src="./src/Port.js"></script>
-    <script src="./src/Itinerary.js"></script>
-    <script src="./src/Ship.js"></script>
+    <form id="form" onsubmit="return false">
+      <label for="port">Port Name:</label><br />
+      <input type="text" size="10" placeholder="Enter port here" /><br />
+      <button type="submit" id="addPortButton">Add</button>
+    </form>
+    <script src="src/controller.js"></script>
+    <script src="src/port.js"></script>
+    <script src="src/itinerary.js"></script>
+    <script src="src/ship.js"></script>
     <script>
-      const itinerary = new Itinerary([
-        new Port("Holyhead"),
-        new Port("Dublin"),
-        new Port("Portmsouth"),
-        new Port("Calais"),
-      ]);
+      const itinerary = new Itinerary([new Port("First port of call")]);
       const ship = new Ship(itinerary);
       const controller = new Controller(ship);
       controller.renderPorts(itinerary.ports);
-      controller.renderShip();
     </script>
   </body>
 </html>

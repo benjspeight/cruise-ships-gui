@@ -1,18 +1,24 @@
 (function exportPort() {
-  function Port(name) {
-    this.name = name;
-    this.ships = [];
-  }
+  class Port {
+    constructor(name) {
+      this.name = name;
+      this.ships = [];
+    }
 
-  Port.prototype = {
     addShip(ship) {
+      if (ship.currentPort.name !== this.name) {
+        return "This ship is not currently docked at this port";
+      }
       this.ships.push(ship);
-    },
-    removeShip(ship) {
-      this.ships = this.ships.filter((dockedShip) => dockedShip !== ship);
-    },
-  };
+    }
 
+    removeShip(ship) {
+      if (ship.previousPort.name !== this.name) {
+        return "This ship is still docked at this port";
+      }
+      this.ships = this.ships.filter((shipElement) => shipElement !== ship);
+    }
+  }
   if (typeof module !== "undefined" && module.exports) {
     module.exports = Port;
   } else {

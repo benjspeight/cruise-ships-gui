@@ -37,21 +37,20 @@ body {
   position: absolute;
 }
 
-#sailbutton {
-  border: 0;
+#sailButton {
+  font-family: "Press Start 2P", cursive;
+  position: absolute;
   background-color: #fb3640;
   border-bottom: 4px solid #d8040f;
+  border: 0;
   color: white;
-  font-family: inherit;
   padding: 10px 20px;
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  font-family: "Press Start 2P", cursive;
 }
 
-#sailbutton:focus {
+#sailbutton:active {
   background-color: #d8040f;
   border-bottom-width: 0;
   padding-top: 14px;
@@ -67,7 +66,7 @@ body {
   background-color: white;
 }
 
-#hud {
+#display {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -76,7 +75,7 @@ body {
   font-size: 20px;
 }
 
-#portform {
+#form {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -84,7 +83,6 @@ body {
   font-family: "Press Start 2P", cursive;
   color: white;
   background-color: #c2c2c2;
-  align-items: center;
   border-style: double;
   border-color: black;
   box-sizing: border-box;
